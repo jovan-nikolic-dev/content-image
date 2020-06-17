@@ -7,7 +7,16 @@ body {
   background: white;
   color: #323232;
 }
-
+:root {
+  --container-width: 1200px;
+  --container-padding: 20px;
+}
+.container {
+  border: 2px solid black;
+  max-width: var(--container-width);
+  margin: auto;
+  padding: 0 var(--container-padding);
+}
 .wrapper {
   display: flex;
 }
@@ -19,6 +28,8 @@ body {
 .left-half {
   border: 2px solid blue;
   background-color: #ccc;
+  /* container fix */
+  padding-left: calc(50% - (var(--container-width)/2) + var(--container-padding));
 }
 .right-half {
   height: inherit;
